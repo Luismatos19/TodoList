@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryColor } from '../config/colors';
+import * as colors from '../config/colors';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -38,7 +38,7 @@ export const Container = styled.section`
   max-width: 800px;
   background: black;
   margin: 30px;
-  background: ${primaryColor};
+  background: ${colors.red};
 
 
 `;
