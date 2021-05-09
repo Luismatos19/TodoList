@@ -1,17 +1,26 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
+import { Provider } from 'react-redux';
+
+import history from './services/history';
 import GlobalStyles from './GlobalStyle/GlobalStyles';
 import Home from './pages/Home';
+import Header from './Components/Header/';
+import Store from './store/index'
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <GlobalStyles />
-      <Home />
+    <Provider store={Store}>
+      <Router history={history}>
+        <GlobalStyles />
+        <Header />
+        <Home />
 
-
-    </BrowserRouter>
+        <ToastContainer />
+      </Router>
+    </Provider>
   );
 }
 
