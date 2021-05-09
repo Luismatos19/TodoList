@@ -1,11 +1,24 @@
 import React from 'react';
-import { Nav } from './styled'
+import { Link } from 'react-router-dom';
+
+import { Nav, Links, Menu, Title } from './styled';
+import { IoHomeOutline, IoLogInOutline, IoPersonAdd, IoMenu } from "react-icons/io5";
 
 export default function Head() {
   return (
 
     <Nav>
-      OI
+      <Menu>
+        <IoMenu size={35} />
+      </Menu>
+      <Title>
+        TOdO LIsT
+      </Title>
+      <Links>
+        <Link to={'/'}><IoHomeOutline size={35} /></Link>
+        <Link to={'/login'}><IoLogInOutline size={35} /></Link>
+        <Link to={'/register'}><IoPersonAdd size={35} /></Link>
+      </Links>
     </Nav>
   )
 
