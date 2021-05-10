@@ -16,11 +16,13 @@ export const Card = styled.section`
     // user icon
     .logo {
         margin-top: 60px;
+        margin-left: 90px;
     }
 
     h1 {
         margin-top: 30px;
         font-size: 50px;
+        text-align: center;
     }
     //input
     .input {
