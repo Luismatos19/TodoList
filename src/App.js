@@ -1,27 +1,22 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify'
+import React from "react";
+import { Router } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-
-import history from './services/history';
-import GlobalStyles from './GlobalStyle/GlobalStyles';
-import Header from './Components/Header/';
-import Routes from './routes/index';
-
+import history from "./services/history";
+import GlobalStyles from "./GlobalStyle/GlobalStyles";
+import Header from "./Components/Header/";
+import Routes from "./routes/index";
 
 function App() {
+    return (
+        <Router history={history}>
+            <GlobalStyles />
+            <Header />
+            <Routes />
 
-  return (
-
-    <Router history={history}>
-      <GlobalStyles />
-      <Header />
-      <Routes />
-
-      <ToastContainer />
-    </Router>
-
-  );
+            <ToastContainer />
+        </Router>
+    );
 }
 
 export default App;

@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import * as colors from '../config/colors';
-import 'react-toastify/dist/ReactToastify.css';
+import styled, { createGlobalStyle } from "styled-components";
+import * as colors from "../config/colors";
+import "react-toastify/dist/ReactToastify.css";
 
 export default createGlobalStyle`
   *{
@@ -35,18 +35,15 @@ export default createGlobalStyle`
   }
 `;
 
-
 export const Container = styled.section`
-  width: 80%;
-  display: flex;
+    width: 80%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-  max-width: 1100px;
-   height: 800px;
-   margin: 0 auto;
-  background: white;
-  border-radius: 15px;
-  margin-top: 40px;
-
-
+    max-width: 1100px;
+    height: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    margin-top: 40px;
 `;
