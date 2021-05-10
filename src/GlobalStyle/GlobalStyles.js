@@ -13,6 +13,8 @@ export default createGlobalStyle`
 
   body{
     font-family:sans-serif;
+    background-color: ${colors.gray};
+    
     
   }
 
@@ -35,10 +37,16 @@ export default createGlobalStyle`
 
 
 export const Container = styled.section`
-  max-width: 800px;
-  background: black;
-  margin: 30px;
-  background: ${colors.red};
+  width: 80%;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+  max-width: 1100px;
+   height: 800px;
+   margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  margin-top: 40px;
 
 
 `;

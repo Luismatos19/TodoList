@@ -5,8 +5,8 @@ import { ToastContainer } from 'react-toastify'
 
 import history from './services/history';
 import GlobalStyles from './GlobalStyle/GlobalStyles';
-import Home from './pages/Home';
 import Header from './Components/Header/';
+import Routes from './routes/index';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <Router history={history}>
       <GlobalStyles />
       <Header />
-      <Home />
+      <Routes />
 
       <ToastContainer />
     </Router>
