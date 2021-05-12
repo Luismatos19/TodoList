@@ -32,6 +32,10 @@ export const Card = styled.section`
         text-align: center;
     }
 
+    input:hover {
+        border: 1px solid ${colors.red};
+    }
+
     .input h2 {
         padding-top: 20px;
         text-align: center;
