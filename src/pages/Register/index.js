@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import FormRegister from "../../Components/FormRegister/index";
-
+import { toast } from "react-toastify";
+import history from "../../services/history";
+import api from "../../services/axios";
 import { Card } from "./styled";
 import { FaUserAlt } from "react-icons/fa";
 
@@ -9,10 +10,31 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        FormRegister(username, email, password);
+    const user = {
+        username: username,
+        email: email,
+        password: password,
     };
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        //header paraa  requisição
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: "JWT fefege...",
+        };
+
+        try {
+            await api.post("/register", user, {
+                headers: headers,
+            });
+            toast.success("Registro feito com sucesso");
+            history.push("/home");
+        } catch (err) {
+            console.log(err);
+            toast.error("Preencha todos os campos");
+        }
+    }
 
     return (
         <Card>

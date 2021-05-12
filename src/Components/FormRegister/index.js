@@ -1,4 +1,7 @@
 import api from "../../services/axios";
+import { toast } from "react-toastify";
+
+//função para fazer o registro
 
 export default async function FormRegister(username, email, password) {
     const user = {
@@ -7,6 +10,7 @@ export default async function FormRegister(username, email, password) {
         password: password,
     };
 
+    //header paraa  requisição
     const headers = {
         "Content-Type": "application/json",
         Authorization: "JWT fefege...",
@@ -14,7 +18,15 @@ export default async function FormRegister(username, email, password) {
 
     console.log(user);
 
-    await api.post("http://127.0.0.1:3333/register", user, {
-        headers: headers,
-    });
+    try {
+        await api.post("/register", user, {
+            headers: headers,
+        });
+        toast.success("Registro feito com sucesso");
+        return true;
+    } catch (err) {
+        console.log(err);
+        toast.error("Preencha todos os campos");
+        return false;
+    }
 }

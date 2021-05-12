@@ -1,3 +1,5 @@
+//import * as
+
 // set uam sate inicial para aplicação
 const initialState = {};
 
