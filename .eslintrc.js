@@ -16,5 +16,6 @@ module.exports = {
         indent: ["error", 4],
         quotes: ["error", "double"],
         semi: ["error", "always"],
+        "react/prop-types": 0,
     },
 };

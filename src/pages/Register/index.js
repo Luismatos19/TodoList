@@ -22,7 +22,7 @@ export default function Register() {
             <div>
                 <h1>Registre-se</h1>
             </div>
-            <form action="/home" className="input" onSubmit={handleSubmit}>
+            <form action="#" className="input" onSubmit={handleSubmit}>
                 <h2> Username </h2>
                 <input
                     type="text"
