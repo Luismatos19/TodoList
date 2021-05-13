@@ -1,9 +1,10 @@
 import React from "react";
 import { Router } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify"; //manda janela com erros na tela
+import { Provider } from "react-redux"; //guarda estado globalmente
+import { PersistGate } from "redux-persist/integration/react"; //guarda os state no local storage
 
-import store from "./store";
+import store, { persistor } from "./store";
 import history from "./services/history";
 
 import GlobalStyles from "./GlobalStyle/GlobalStyles";
@@ -13,13 +14,15 @@ import Routes from "./routes/index";
 function App() {
     return (
         <Provider store={store}>
-            <Router history={history}>
-                <GlobalStyles />
-                <Header />
-                <Routes />
+            <PersistGate persistor={persistor}>
+                <Router history={history}>
+                    <GlobalStyles />
+                    <Header />
+                    <Routes />
 
-                <ToastContainer />
-            </Router>
+                    <ToastContainer />
+                </Router>
+            </PersistGate>
         </Provider>
     );
 }
