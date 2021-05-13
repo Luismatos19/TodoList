@@ -1,8 +1,8 @@
 // combina todos os reducer para ser usado depois
 import { combineReducers } from "redux";
 
-import loginReducer from "./login/reducer";
+import login from "./login/reducer";
 
 export default combineReducers({
-    loginReducer,
+    login,
 });
